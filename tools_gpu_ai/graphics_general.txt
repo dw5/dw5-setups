@@ -1,0 +1,3 @@
+GRAPHICS MIX https://github.com/ProGamerGov/neural-style-pt https://www.youtube.com/watch?v=Eq7sYxf3XLM
+SPLEETER BUT FOR GRAPHICS https://lllyasviel.github.io/AppearanceEraser/ https://youtu.be/sdbMbMKTitM
+LIGHT(ing) SOURCES https://lllyasviel.github.io/PaintingLight/ https://youtu.be/YG7NJmW621o

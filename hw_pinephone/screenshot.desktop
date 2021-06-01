@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=1 Ez Screenshot
+Type=Application
+Icon=applets-screenshooter
+Exec=/home/manjaro/Neatappas/screenshotapp.sh
+Categories=Utility;
