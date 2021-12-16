@@ -1,6 +1,10 @@
 #TODO
 # BASE: MANJARO ARM PHOSH
 sudo pacman -Syu
+# SSH
+sudo pacman -S openssh
+sudo systemctl enable sshd.service
+sudo systemctl start sshd.service
 reboot
 
 # YOUTUBE-DL + FFMPEG
