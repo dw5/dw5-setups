@@ -20,6 +20,7 @@ FOR %y IN (*.avi) DO @ffmpeg -i "%y" "%y-recoded.mp4"
 FOR %y IN (*.webm) DO @ffmpeg -i "%y" "%y-recoded.mp4"
 
 # tool goodies
+yt-dl --write-subs --write-auto-subs --embed-subs --write-thumbnail --write-description --write-info-json --compat-options no-live-chats
 https://github.com/overcast07/wayback-machine-spn-scripts/blob/main/spn.sh
 -vf scale=3840:2160 # to 4K in order to better preserve <720p videos on video platforms
 
