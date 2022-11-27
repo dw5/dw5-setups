@@ -1,17 +1,18 @@
 #!/bin/bash
-# WIP f81337: purpose is to keep original file date and timestamps
+# arhmk + arhread | arhvrn
+# maker + maker stage 2 | rename maker
+# f81337: purpose is to keep original file date and timestamps
 # after file conversion to modern and efficient formats
 # PRO TIP: hey if you can, use archivist if you can't change paths
 
 # === get file timestamps ===
 archivistlogfile="archivist.log"
-renametodolist="archvst-todo.sh" 
-# ^ so whatever it got changed to can be edited in text editor, you wont apply it to .wmv when there is .av1 ? :D
+renametodolist="archvst-todo.log" # so whatever it got changed to can be edited in text editor, you wont apply it to .wmv when there is .av1 ? :D
 rm $archivistlogfile
 rm $renametodolist
-
 for curFile in *; do
 if [ -f "${curFile}" ]; then #only FILES, no folders // -d directories -f files
+# to make touch command friendly and more human readable
 # $(date -d @<stat unix output> +%Y%m%d%H%M)
     curFileAXtime=$(stat -c %X "$curFile") # access
     curFileMDtime=$(stat -c %Y "$curFile") # modify
