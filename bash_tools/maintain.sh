@@ -5,6 +5,8 @@ mkdir recoded; for i in *.m4a; do ffmpeg -i "$i" "${i%.*}-recoded.mp3"; done
 mkdir recoded; mogrify -format jpg -path ./recoded *.png # turbo
 mkdir recoded; mogrify -format avif -path ./recoded *.png # do in bg, slow
 
+#gif2AV1 ffmpeg -i x -c:v libaom-av1 -b:v 200k failed-test.mp4
+
 ` fdupes -SrdN . ` # dont ask just do it
 ` fdupes -Srd . ` # see all files before delete
 
