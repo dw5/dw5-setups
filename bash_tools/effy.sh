@@ -8,5 +8,5 @@ output_dir=$(pwd)/output
 # Create the output directory if it doesn't exist
 mkdir -p "$output_dir"
 
-# Iterate over all files in the input directory and subdirectories
-find "$input_dir" -type f -exec mogrify -format avif {} -write "$output_dir/{}" \;
+# Iterate over all image files in the input directory and subdirectories
+find "$input_dir" -type f -name '*.jpg' -o -name '*.png' -o -name '*.bmp' -o -name '*.tga' -exec mogrify -format avif {} -write "$output_dir/{}" \;
