@@ -21,6 +21,11 @@ FOR %y IN (*.mp4) DO @ffmpeg -i "%y" "%y-recoded.mp4"
 FOR %y IN (*.avi) DO @ffmpeg -i "%y" "%y-recoded.mp4"
 FOR %y IN (*.webm) DO @ffmpeg -i "%y" "%y-recoded.mp4"
 
+# BLITZ
+ffmpeg -i x.p -acodec mp3 -vcodec copy p.x
+yt-dlp -f mp4 -S res:360
+yt-dlp -f -
+
 # tool goodies
 yt-dl --write-subs --write-auto-subs --embed-subs --write-thumbnail --write-description --write-info-json --compat-options no-live-chats
 https://github.com/overcast07/wayback-machine-spn-scripts/blob/main/spn.sh
