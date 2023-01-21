@@ -11,8 +11,8 @@ mkdir recoded; mogrify -format avif -path ./recoded *.png # do in bg, slow
 ` fdupes -Srd . ` # see all files before delete
 
 # windows
-mkdir recoded    && mogrify -format jpg -path ./recoded *.png
-mkdir recoded    && mogrify -format avif -path ./recoded *.png
+mkdir recoded    & mogrify -format jpg -path ./recoded *.png
+mkdir avif    & mogrify -format avif -path ./recoded *.png
 mkdir recodedvid && FOR %y IN (*.webm) DO @ffmpeg -i "%y" "./recodedvid/%y-recoded.mp4"
 
 FOR %y IN (*.wav) DO @ffmpeg -i "%y" "%y-recoded.opus"
