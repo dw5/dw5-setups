@@ -12,7 +12,7 @@ mkdir recoded; mogrify -format avif -path ./recoded *.png # do in bg, slow
 
 # windows
 mkdir recoded    & mogrify -format jpg -path ./recoded *.png
-mkdir avif    & mogrify -format avif -path ./recoded *.png
+mkdir avif    & mogrify -format avif -path ./avif *.png
 mkdir recodedvid && FOR %y IN (*.webm) DO @ffmpeg -i "%y" "./recodedvid/%y-recoded.mp4"
 
 FOR %y IN (*.wav) DO @ffmpeg -i "%y" "%y-recoded.opus"
