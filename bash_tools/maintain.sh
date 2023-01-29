@@ -25,6 +25,7 @@ FOR %y IN (*.webm) DO @ffmpeg -i "%y" "%y-recoded.mp4"
 ffmpeg -i x.p -acodec mp3 -vcodec copy p.x
 yt-dlp -f mp4 -S res:360
 yt-dlp -f -
+yt-dlp --merge-output-format mp4
 
 # tool goodies
 yt-dl --write-subs --write-auto-subs --embed-subs --write-thumbnail --write-description --write-info-json --compat-options no-live-chats
