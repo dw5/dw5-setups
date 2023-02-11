@@ -21,6 +21,9 @@ FOR %y IN (*.mp4) DO @ffmpeg -i "%y" "%y-recoded.mp4"
 FOR %y IN (*.avi) DO @ffmpeg -i "%y" "%y-recoded.mp4"
 FOR %y IN (*.webm) DO @ffmpeg -i "%y" "%y-recoded.mp4"
 
+# windows count cli
+dir *.mp4 /b /a-d | find /c /v ""
+
 # BLITZ
 ffmpeg -i x.p -acodec mp3 -vcodec copy p.x
 yt-dlp -f mp4 -S res:360
