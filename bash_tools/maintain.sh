@@ -21,6 +21,12 @@ FOR %y IN (*.mp4) DO @ffmpeg -i "%y" "%y-recoded.mp4"
 FOR %y IN (*.avi) DO @ffmpeg -i "%y" "%y-recoded.mp4"
 FOR %y IN (*.webm) DO @ffmpeg -i "%y" "%y-recoded.mp4"
 
+# too heavy for imgmagick
+mkdir avifaomff; for i in *.jpg; do ffmpeg -i "$i" -c:v libaom-av1 -still-picture 1 "./recoded/${i%.*}.avif"; done
+mkdir avifaomff; for i in *.png; do ffmpeg -i "$i" -c:v libaom-av1 -still-picture 1 "./recoded/${i%.*}.avif"; done
+mkdir avifaomff & FOR %y IN (*.jpg) DO @ffmpeg -i "%y" -c:v libaom-av1 -still-picture 1 "./avifaomff/%y.avif"
+mkdir avifaomff & FOR %y IN (*.png) DO @ffmpeg -i "%y" -c:v libaom-av1 -still-picture 1 "./avifaomff/%y.avif"
+
 # windows count cli
 dir *.mp4 /b /a-d | find /c /v ""
 
