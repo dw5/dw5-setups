@@ -13,6 +13,8 @@ mkdir recoded; mogrify -format avif -path ./recoded *.png # do in bg, slow
 ffmpeg -ss 00:20:50 -i "abc.mp4" -vn -acodec copy abc.webm
 ffmpeg -ss 00:20:50 -i "abc.mp4" abc.wav
 
+
+ssh sv01.nty -p 2023 -l testing -i sshkey.private
 crontab -e
 0 1 * * * rclone copy --bwlimit 41.67M --max-size 1G source:path destination:path >> /var/log/rclone.log 2>&1
 
