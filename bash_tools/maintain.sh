@@ -22,6 +22,8 @@ ssh sv01.nty -p 2023 -l testing -i sshkey.private
 crontab -e
 0 1 * * * rclone copy --bwlimit 41.67M --max-size 1G source:path destination:path >> /var/log/rclone.log 2>&1
 
+rclone ls --include "*examplefile*" remote:  # https://forum.rclone.org/t/what-is-the-fastest-way-to-search-for-and-download-specific-files-using-rclone/11089
+
 # https://devhints.io/screen
 screen -S <abc>
 screen -r <abc>
