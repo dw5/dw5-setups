@@ -10,6 +10,16 @@ mkdir recoded; mogrify -format avif -path ./recoded *.png # do in bg, slow
 ` fdupes -SrdN . ` # dont ask just do it
 ` fdupes -Srd . ` # see all files before delete
 
+ffmpeg -ss 00:20:50 -i "abc.mp4" -vn -acodec copy abc.webm
+ffmpeg -ss 00:20:50 -i "abc.mp4" abc.wav
+
+crontab -e
+0 1 * * * rclone copy --bwlimit 1250M source:path destination:path >> /var/log/rclone.log 2>&1
+
+# https://devhints.io/screen
+screen -S <abc>
+screen -r <abc>
+
 # windows
 mkdir recoded    & mogrify -format jpg -path ./recoded *.png
 mkdir avif    & mogrify -format avif -path ./avif *.png
