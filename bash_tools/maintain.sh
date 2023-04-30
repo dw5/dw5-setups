@@ -1,13 +1,15 @@
 
 # linux
 mkdir recoded; for i in *.mp4; do ffmpeg -i "$i" "./recoded/${i%.*}-recoded.mp4"; done
-mkdir recoded; for i in *.m4a; do ffmpeg -i "$i" "${i%.*}-recoded.mp3"; done
-mkdir recoded; mogrify -format jpg -path ./recoded *.png # turbo
-mkdir recoded; mogrify -format avif -path ./recoded *.png # do in bg, slow
+mkdir recoded; for i in *.m4a; do ffmpeg -i "$i" "./recoded/${i%.*}-recoded.mp3"; done
+mkdir recoded; mogrify -format jpg -path ./recoded *.png # turbo PNG2JPG (no alpha)
+mkdir recoded; mogrify -format avif -path ./recoded *.png # do in bg, slow PNG2AVIF (no alpha transperancy)
 
 FOR %y IN (*.png) DO @cavif "%y"  # imagemagick sometimes output broken avif (unreadable, unusable)
+#mkdir cavif; for i in *.m4a; do cavif "$i" && mv?; done
 
 #gif2AV1 ffmpeg -i x -c:v libaom-av1 -b:v 200k failed-test.mp4
+ffmpeg -y -i path_to_your.gif -vsync 0 -pix_fmt yuv420p -f yuv4mpegpipe - | ./rav1e - -o - > path_to_your.avifs #gif2avif #src: https://gif2avif.com/how-it-works/
 
 ` fdupes -SrdN . ` # dont ask just do it
 ` fdupes -Srd . ` # see all files before delete
