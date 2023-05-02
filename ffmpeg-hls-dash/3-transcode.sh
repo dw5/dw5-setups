@@ -25,7 +25,7 @@ input_file="example.mkv"
         
 		echo START $input_file ${profiles[$i]} $(date +'%Y-%m-%d %H:%M:%S')
     ffmpeg -i "$input_file" -vf "scale=$resolution" -c:v libvpx-vp9 -an "$output_file-${profiles[$i]}.mp4"
-    ffmpeg -i "$input_file" -vf "scale=$resolution" -c:v libvpx-vp9 -an "$output_file-${profiles[$i]}.mp4"
+    #ffmpeg -i "$input_file" -vf "scale=$resolution" -c:v libaom-av1 -an "$output_file-${profiles[$i]}.mp4"
 		# fragment the file
 		mp4fragment "$output_file-${profiles[$i]}.mp4" "$output_file-${profiles[$i]}_frag.mp4"
 		everyresvid+=" [+representation_id=$resolution,type=video]$output_file-${profiles[$i]}_frag.mp4"
