@@ -1,6 +1,10 @@
 #!/bin/bash
 echo "Package Job:" $input_file
 
+# if something, you may want to create a job lock, simple 
+# if file exists pkg.lck { echo "Job in progress", sleep 1minute}
+# echo "LOCK">pkg.lck
+
 audio_files=$(find . -name '*_afrag.mp4' -type f -printf '%T@ %p\n' | sort -n | cut -d' ' -f2-)
 audoutput=""
 
@@ -23,3 +27,4 @@ done
 bash "/path/to/Bento4/Source/Python/wrappers/mp4dash" --hls --no-split $audoutput $vidoutput --use-segment-timeline -o $(openssl rand -hex 8) 
 
 #bkpush / rclone / rsync / mv / aws / curl / etc
+#rm pkg.lck
