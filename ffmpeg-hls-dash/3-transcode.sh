@@ -31,5 +31,5 @@ input_file="example.mkv"
 		everyresvid+=" [+representation_id=$resolution,type=video]$output_file-${profiles[$i]}_frag.mp4"
     
     # Once some resolution finished encode, package it (hls and dash) and push it to public access (directory or storage (s3) bucket)
-    # bash 4-finalpkg.sh
+    # bash 4-finalpkg.sh &
     done
