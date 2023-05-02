@@ -1,12 +1,9 @@
-todo
-apt install ffmpeg make cmake....
-
-
-git clone https://github.com/axiomatic-systems/Bento4.git
-cd Bento4/
-
+git clone https://github.com/axiomatic-systems/Bento4/
+cd Bento4
+pwd
+#alias mp4dash='bash "$(pwd)/Source/Python/wrappers/mp4dash"'
 mkdir cmakebuild
-cd cmakebuild/
+cd cmakebuild
 cmake -DCMAKE_BUILD_TYPE=Release ..
 make
-make install
+sudo make install
