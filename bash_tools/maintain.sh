@@ -6,7 +6,7 @@ mkdir recoded; mogrify -format jpg -path ./recoded *.png # turbo PNG2JPG (no alp
 mkdir recoded; mogrify -format avif -path ./recoded *.png # do in bg, slow PNG2AVIF (no alpha transperancy)
 
 FOR %y IN (*.png) DO @cavif "%y"  # imagemagick sometimes output broken avif (unreadable, unusable)
-#mkdir cavif; for i in *.m4a; do cavif "$i" && mv?; done
+cavif *.png && mkdir avifout && mv *.avif avifout
 
 #gif2AV1 ffmpeg -i x -c:v libaom-av1 -b:v 200k failed-test.mp4
 ffmpeg -y -i path_to_your.gif -vsync 0 -pix_fmt yuv420p -f yuv4mpegpipe - | ./rav1e - -o - > path_to_your.avifs #gif2avif #src: https://gif2avif.com/how-it-works/
