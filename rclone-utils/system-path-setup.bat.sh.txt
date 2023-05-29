@@ -1,0 +1,16 @@
+
+###### WINDOWS
+
+@echo off
+
+setx /m PATH "%PATH%;C:\shared"
+
+
+###### LINUX 
+ 
+export PATH=/home/$USERNAME/sharedcli:$PATH   #temp
+ 
+nano .bashrc  # perma for bash (wont work zsh?)
+
+sudo mv rcwd.sh /usr/local/bin/rcwd
+sudo chmod +x /usr/local/bin/rcwd
