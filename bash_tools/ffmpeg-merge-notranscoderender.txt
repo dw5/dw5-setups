@@ -1,0 +1,7 @@
+exec
+ffmpeg -f concat -safe 0 -i input.txt -c copy HWD.mp4
+
+input
+file 'Team Fortress 2 2023.07.15 - 21.37.59.02.mp4'
+file 'Team Fortress 2 2023.07.15 - 21.42.41.03.mp4'
+file 'Team Fortress 2 2023.07.15 - 21.44.27.04.mp4'
