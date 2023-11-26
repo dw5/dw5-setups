@@ -1,3 +1,5 @@
+# rclone
+-P --transfers=1 --checkers 1 --multi-thread-streams 0  --modify-window 2s
 
 # linux
 mkdir recoded; for i in *.mp4; do ffmpeg -i "$i" "./recoded/${i%.*}-recoded.mp4"; done
