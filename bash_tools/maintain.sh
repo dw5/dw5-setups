@@ -56,7 +56,7 @@ dir *.mp4 /b /a-d | find /c /v ""
 
 # BLITZ
 ffmpeg -i x.p -acodec mp3 -vcodec copy p.x
-yt-dlp -f mp4 -S res:360
+yt-dlp -f mp4 -S res:360 -S res,vcodec:av1 
 yt-dlp -f -
 yt-dlp --merge-output-format mp4
 
